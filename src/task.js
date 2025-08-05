@@ -6,9 +6,17 @@ class Task {
         this.description = description;
         this.status = 'todo';
         this.createdAt = new Date();
-	this.priority = 'medium';
+        this.priority = 'medium';
+        
+feature/task-labels
+	this.labels = [];
     }
 
+addLabel(label) {
+    if (label && !this.labels.includes(label)) {
+        this.labels.push(label);
+    }
+}
 // Новый метод
 setPriority(priority) {
     const validPriorities = ['low', 'medium', 'high', 'urgent'];
